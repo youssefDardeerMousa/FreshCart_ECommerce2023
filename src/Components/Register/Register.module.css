@@ -1,0 +1,50 @@
+/* Register.module.css */
+
+.bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-image: url("./shopping-cart-with-wooden-elements_23-2148879396.avif");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; /* Add this property for a fixed background */
+    width: 100%;
+    height: calc(100vh + 700px);
+  }
+  /* Register.module.css or custom-footer.css */
+
+/* Footer styles */
+.footer {
+    background-color: #0aad0a;
+   
+  }
+  
+  .footer h3 {
+    color: #ffffff;
+  }
+  
+  .footer p {
+    color: #ffffff;
+  }
+  
+  /* Social media icons */
+  .footer a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .footer a:hover {
+    color: #0153f8; /* Change to your desired hover color */
+  }
+  
+  /* Copyright text */
+  .footer .text-center {
+    background-color: #222;
+    color: #ccc;
+    padding: 10px 0;
+  }
+  
+  

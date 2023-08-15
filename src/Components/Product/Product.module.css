@@ -1,0 +1,27 @@
+.card{
+    background-color: rgb(25, 42, 36);
+   
+    transition: 0.5s;
+}
+
+.card:hover{
+    background-color: rgb(75, 179, 145);
+   
+    
+}
+.all{
+    position: relative;
+}
+.bgimg{
+
+    position: absolute;
+    top:0;
+    bottom: 100;
+    right: 0;
+    left: 0;
+        background-image: url("./shopping-cart-with-wooden-elements_23-2148879396.avif");
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+
+}

@@ -1,0 +1,27 @@
+.bgimg{
+    position: absolute;
+    top: 0;
+    bottom: 100;
+    right: 0;
+    left: 0;
+  
+    background-image: url("./shopping-cart-with-wooden-elements_23-2148879396.avif");
+    background-size: cover;
+    background-attachment: fixed;
+    
+     
+    }
+
+    .img{
+     
+        height:400px;
+        object-fit: cover;
+    }
+    .bghover{
+        background-color: rgb(5, 11, 5);
+        transition: 0.5s;
+    }
+    .bghover:hover{
+        background-color: rgb(0, 0, 0);
+     
+    }

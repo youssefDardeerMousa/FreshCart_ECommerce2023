@@ -1,0 +1,39 @@
+.imgcover{
+  
+    /* heigh:500px; */
+    object-fit: cover;
+}
+.bgimg{
+
+    background-image: url("./shopping-cart-with-wooden-elements_23-2148879396.avif");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+
+}
+.cardbody {
+    background-color: rgb(92, 133, 116);
+    color: #ffffff;
+    transition: 0.5s ease-in-out;
+  }
+  
+  .cardbody:hover {
+    background-color: #11ac5e; /* Cooler background color */
+    color: #ffffff;
+  }
+  .hidden{
+    overflow: hidden;
+  }
+  .change {
+    transform: rotate(0) skew(1);
+    transition-delay: 0.25s;
+
+    transition: 1s;/* Apply transition to transform and delay it */
+  }
+  
+  .change:hover {
+    transform: rotate(360deg) scale(1.25);
+    /* Reset the delay on hover */
+  }
+  

@@ -8,6 +8,6 @@ export default function Protected(props) {
   if (token && token.slice(0, 36) !== "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9") {
     return <Navigate to={'/Login'} />;
   } else {
-    return props.children;
+   return props.children;
   }
 }

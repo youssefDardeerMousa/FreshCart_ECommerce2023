@@ -10,7 +10,6 @@
   import { Link, useNavigate } from 'react-router-dom'
   import style from "./login.module.css"
   export default function Login({saveUserData}) {
-
   let Nav=useNavigate()
   let success=(x)=>toast.success(x)
   let Error=(x)=>toast.error(x)
@@ -34,14 +33,14 @@
           (data)=>{
             setloading(false)
             
-            console.log(data.data.token);
-            localStorage.setItem('token',data.data.token)
             if(data.status===200){
-              console.log(data);
               success("Success Login",{them:'success'})
               saveUserData()
               Nav("/")
-              
+             if(data.data.message=="success"){
+              localStorage.setItem('token',data.data.token)
+
+             }
             }
             
             

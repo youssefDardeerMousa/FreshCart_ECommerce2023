@@ -21,7 +21,6 @@
         let [facount,setfacount]=useState(0)
         let [dataaa,setdataaa]=useState([])
         let [loadingcheck,setloadingcheck]=useState(true)
-
         let [totalCartPrice, settotalCartPrice] = useState()
         function ddeletefavourite(token,productId){
             

@@ -2,17 +2,22 @@ import React, { useContext, useEffect, useState } from 'react'
 import Navbar from '../Navbar/Navbar'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { DataContext } from '../../Context/ContextData'
+import Cookies from 'js-cookie';
 
-export default function LayOut({userData,setuserData}) {
+export default function LayOut({userData,setuserData,cookies}) {
   let navigate=useNavigate()
-  let {setCount,setfacount,clear}=useContext(DataContext)
+  let {setCount,setfacount,clear,setA}=useContext(DataContext)
 
     function logOut(){
+      Cookies.remove("Authentication")
         localStorage.removeItem("token");
+       
         setuserData(null);
         setCount(0);
         setfacount(0)
-        navigate("/")
+        navigate("/");
+        console.clear()
+        setA(false)
     }
   return (
     <>

@@ -5,7 +5,7 @@
         import { toast } from 'react-toastify';
         import { Helmet } from 'react-helmet';
         export default function Favourite() {
-        let {setfav,setdataaa,dataaa,ddeletefavourite,setfacount,fav,getfavourite}=useContext(DataContext)
+        let {setfav,Getusercart,setdataaa,dataaa,ddeletefavourite,setfacount,fav,getfavourite}=useContext(DataContext)
         //deletefavourite
         let deltoast=(x)=>toast.success(x)
 
@@ -23,6 +23,7 @@
         }
         useEffect(()=>{
             get()
+            Getusercart(localStorage.getItem("token"))
         },[])
         async function myddeletefavourite(myid){
             try {

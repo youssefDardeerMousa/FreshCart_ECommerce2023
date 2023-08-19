@@ -6,7 +6,7 @@ import { DataContext } from '../../Context/ContextData'
 import style from "../Product/Product.module.css"
 export default function Products() {
     let[products,setproducts]=useState([])
-   
+   let {Getusercart,getfavourite}=useContext(DataContext)
     let[loading,setloading]=useState(true)
     const GetAllProducts=async()=>{
         let {data}=await axios.get(`${BaseUrl}products`)
@@ -17,6 +17,8 @@ export default function Products() {
     }
     useEffect(()=>{
         GetAllProducts()
+        getfavourite(localStorage.getItem("token"))
+        getfavourite(localStorage.getItem("token"))
     },[])
     
   return <>

@@ -5,8 +5,9 @@
         import { Helmet } from 'react-helmet'
         import style from "./Checkout.module.css"
         export default function CheckOut() {
-        let {onlinePayment,loadingcheck,cartid,Getusercart}=useContext(DataContext)
+        let {onlinePayment,getfavourite,loadingcheck,cartid,Getusercart}=useContext(DataContext)
         let [mytoken,setmytoken]=useState()
+        
         async function payment(values){
         let token =localStorage.getItem("token")
         setmytoken(token)
@@ -36,6 +37,7 @@
         })
         useEffect(()=>{
         Getusercart(mytoken)
+        getfavourite(localStorage.getItem("token"))
         },[])
         return (
         <>

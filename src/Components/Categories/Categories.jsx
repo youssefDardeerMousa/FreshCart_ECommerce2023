@@ -4,12 +4,15 @@
     import { Link } from 'react-router-dom'
     import { Helmet } from 'react-helmet'
     export default function Categories() {
-    let {category,dataa}=useContext(DataContext)
+    let {category,dataa,Getusercart,getfavourite}=useContext(DataContext)
+
     async function getcategory(){
       let response=await category();
       console.log(response);
     }
     useEffect(()=>{
+      Getusercart(localStorage.getItem("token"))
+      getfavourite(localStorage.getItem("token"))
       getcategory()
     },[])
     console.log(dataa);

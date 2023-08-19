@@ -9,7 +9,11 @@
   import { DataContext } from '../../Context/ContextData'
   import { Link, useNavigate } from 'react-router-dom'
   import style from "./login.module.css"
+  import jwt from "jwt-decode"
+import Cookies from 'js-cookie'
   export default function Login({saveUserData}) {
+    
+    let {setA}=useContext(DataContext)
   let Nav=useNavigate()
   let success=(x)=>toast.success(x)
   let Error=(x)=>toast.error(x)
@@ -33,14 +37,18 @@
           (data)=>{
             setloading(false)
             
+            console.log(data.data.token);
+           Cookies.set("Authentication",data.data.token)
+           setA(true)
+            localStorage.setItem('token',data.data.token)
+            setA(data.data.token)
+            localStorage.setItem("A",data.data.token)
             if(data.status===200){
+              console.log(data);
               success("Success Login",{them:'success'})
               saveUserData()
               Nav("/")
-             if(data.data.message=="success"){
-              localStorage.setItem('token',data.data.token)
-
-             }
+              
             }
             
             
@@ -57,9 +65,7 @@
   //send to api
         }
     })
-    
-    // console.log(registerFormik.errors);
-    // console.log(registerFormik);
+   
   return (
     <>
     <div className={`${style.bgContainer}`}>

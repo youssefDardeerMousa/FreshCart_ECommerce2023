@@ -3,7 +3,7 @@
     import style from "./Brands.module.css"
     import { Link } from 'react-router-dom';
     export default function Brands() {
-    let {Brands}=useContext(DataContext);
+    let {Brands,Getusercart,getfavourite}=useContext(DataContext);
     let [dataa,setdata]=useState([])
     async function getcategory(){
     let response=await Brands();
@@ -11,6 +11,8 @@
     setdata(response.data.data)
     }
     useEffect(()=>{
+      Getusercart(localStorage.getItem("token"))
+      getfavourite(localStorage.getItem("token"))
     getcategory()
     },[])
     console.log(dataa);

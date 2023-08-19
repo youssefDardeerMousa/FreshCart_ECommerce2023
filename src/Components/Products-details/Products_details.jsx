@@ -78,6 +78,8 @@
     }
     useEffect(()=>{
     Details()
+    Getusercart(localStorage.getItem("token"))
+    getfavourite(localStorage.getItem("token"))
     },[])
     return (
       <>

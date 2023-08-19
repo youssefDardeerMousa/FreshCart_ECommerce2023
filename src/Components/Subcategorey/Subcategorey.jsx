@@ -78,7 +78,7 @@ export default function Subcategorey() {
     let {id}=useParams()
     console.log(id);
 
-    let {Subcategorey}=useContext(DataContext)
+    let {Subcategorey,Getusercart,getfavourite}=useContext(DataContext)
     async function sub(){
         let response=await Subcategorey(id)
         setload(false)
@@ -88,6 +88,8 @@ export default function Subcategorey() {
   
    useEffect(()=>{
     sub()
+    getfavourite(localStorage.getItem("token"))
+    Getusercart(localStorage.getItem("token"))
    },[])
   return (
     <>

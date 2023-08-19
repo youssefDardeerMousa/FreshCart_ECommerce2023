@@ -1,10 +1,14 @@
-        import React, { useState } from 'react'
+        import React, { useContext, useEffect, useState } from 'react'
         import { Link } from 'react-router-dom';
         import {Helmet} from "react-helmet";
         import style from "./Product.module.css"
+import { DataContext } from '../../Context/ContextData';
         export default function Product({products,loading}) {
-
-
+let {Getusercart,getfavourite}=useContext(DataContext)
+useEffect(()=>{
+    Getusercart(localStorage.getItem("token"))
+    getfavourite(localStorage.getItem("token"))
+},[])
         return <>
         {
         <div>

@@ -3,9 +3,13 @@
         import axios from "axios";
         import jwtDecode from "jwt-decode";
         import { Navigate, useParams } from "react-router-dom";
+        import Cookies from 'universal-cookie'
+import jwt from "jwt-decode"
         export let DataContext=createContext();
 
         export default function DataContextFunction({children}){
+            let cookies=new Cookies();
+
         let [loading1,setloading1]=useState(false)
         let [Count,setCount]=useState('0')
         // let navigate=useNavigate()
@@ -22,8 +26,10 @@
         let [dataaa,setdataaa]=useState([])
         let [loadingcheck,setloadingcheck]=useState(true)
         let [totalCartPrice, settotalCartPrice] = useState()
+        let [A,setA]=useState(false)
+
         function ddeletefavourite(token,productId){
-            
+
         return axios.delete(`${BaseUrl}wishlist/${productId}`,{headers:{token}}).then((data)=>data).catch((error)=>{console.log(error);return error})
 
         }
@@ -115,7 +121,7 @@
             
             getfavourite(token)
         },[])
-        return <DataContext.Provider value={{setdataaa,dataaa,loadingcheck,getfavourite,ddeletefavourite,setfacount,facount,setfav,favourite,fav,Brands,Subcategorey,category,setdataa,dataa,settotalCartPrice,totalCartPrice,setdata,data,clearallcart,setcart,cart,setCount,Count,load,setload,Deleted,setdeleted,setistrue,istrue,user,setuser,cartid,onlinePayment,addToCart,Count,Getusercart,loading1,setloading1,deleteProduct,updateProduct}}>
+        return <DataContext.Provider value={{setdataaa,setA,cookies,setA,A,dataaa,loadingcheck,getfavourite,ddeletefavourite,setfacount,facount,setfav,favourite,fav,Brands,Subcategorey,category,setdataa,dataa,settotalCartPrice,totalCartPrice,setdata,data,clearallcart,setcart,cart,setCount,Count,load,setload,Deleted,setdeleted,setistrue,istrue,user,setuser,cartid,onlinePayment,addToCart,Count,Getusercart,loading1,setloading1,deleteProduct,updateProduct}}>
         {children}
         </DataContext.Provider>
         }

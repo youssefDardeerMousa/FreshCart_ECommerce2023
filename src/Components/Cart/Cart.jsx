@@ -7,7 +7,7 @@
         import style from "./cart.module.css"
 
         export default function Cart() {
-        let {Count,settotalCartPrice,totalCartPrice,setistrue,setdata,data,setcart,setCount,load,setload,istrue,clearallcart,Getusercart, deleteProduct, loading1, setloading1,  updateProduct } = useContext(DataContext)
+        let {Count,getfavourite,settotalCartPrice,totalCartPrice,setistrue,setdata,data,setcart,setCount,load,setload,istrue,clearallcart,Getusercart, deleteProduct, loading1, setloading1,  updateProduct } = useContext(DataContext)
         let [check, setcheck] = useState(true)
         let remove = () => toast.error("the product has been deleted")
         let removeall = () => toast.error("all products have been deleted")
@@ -129,7 +129,7 @@
 
         useEffect(() => {
         getCart()
-
+            getfavourite(localStorage.getItem("token"))
         }, [])
         /**<div className="d-flex justify-content-center align-items-center vh-100 w-100">
         <div className="card bg-success text-light">

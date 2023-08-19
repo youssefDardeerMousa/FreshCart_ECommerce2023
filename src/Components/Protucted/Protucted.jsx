@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react'
 import { Navigate } from 'react-router-dom';
 import { DataContext } from '../../Context/ContextData';
+import Cookies from 'js-cookie';
 
-export default function Protected(props) {
-  const token = localStorage.getItem("token");
-  
-  if (token && token.slice(0, 36) !== "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9") {
-    return <Navigate to={'/Login'} />;
-  } else {
-   return props.children;
-  }
+export default function Protucted(props) {
+  let {A}=useContext(DataContext)
+
+  let cookies=Cookies.get("Authentication")
+  console.log(cookies);
+ if(cookies==undefined ){
+   return <Navigate to={'/Login'}/>
+
+ }
+ else{
+  return props.children 
+
+ }
+
 }

@@ -43,6 +43,7 @@ export default function App() {
         {path:"/CheckOut",element: <Protucted><CheckOut/></Protucted>},
         {path:"/Register",element:<Register/>},
         {path:"/Login",element:<Login saveUserData={saveUserData}  />},
+        
         {path:"/FreshCart_ECommerce2023",element:<FreshCart_ECommerce2023/>},
 
 
@@ -58,6 +59,7 @@ export default function App() {
         {path:"/Categories",element: <Protucted><Categories/></Protucted>},
         {path:"/allorders/:Allorders",element: <Protucted><Allorders/></Protucted>},
         {path:"*",element:<NotFound/>},
+        {path:"/MustLogin",element:<NotFound/>},
         {path:"/Products-details/:id",element: <Protucted><Products_details/></Protucted>},
         {path:"/Subcategorey/:id",element: <Protucted><Subcategorey/></Protucted>}
 

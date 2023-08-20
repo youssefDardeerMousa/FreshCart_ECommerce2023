@@ -13,7 +13,6 @@
 import Cookies from 'js-cookie'
   export default function Login({saveUserData}) {
     
-    let {setA}=useContext(DataContext)
   let Nav=useNavigate()
   let success=(x)=>toast.success(x)
   let Error=(x)=>toast.error(x)
@@ -38,11 +37,10 @@ import Cookies from 'js-cookie'
             setloading(false)
             
             console.log(data.data.token);
-           Cookies.set("Authentication",data.data.token)
-           setA(true)
-            localStorage.setItem('token',data.data.token)
-            setA(data.data.token)
-            localStorage.setItem("A",data.data.token)
+           Cookies.set("Authentication",data?.data?.token)
+           
+            localStorage.setItem('token',data?.data?.token)
+           
             if(data.status===200){
               console.log(data);
               success("Success Login",{them:'success'})

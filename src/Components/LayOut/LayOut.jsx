@@ -6,7 +6,7 @@ import Cookies from 'js-cookie';
 
 export default function LayOut({userData,setuserData,cookies}) {
   let navigate=useNavigate()
-  let {setCount,setfacount,clear,setA}=useContext(DataContext)
+  let {setCount,setfacount}=useContext(DataContext)
 
     function logOut(){
       Cookies.remove("Authentication")
@@ -17,7 +17,7 @@ export default function LayOut({userData,setuserData,cookies}) {
         setfacount(0)
         navigate("/");
         console.clear()
-        setA(false)
+       
     }
   return (
     <>

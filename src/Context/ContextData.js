@@ -26,7 +26,7 @@ import jwt from "jwt-decode"
         let [dataaa,setdataaa]=useState([])
         let [loadingcheck,setloadingcheck]=useState(true)
         let [totalCartPrice, settotalCartPrice] = useState()
-        let [A,setA]=useState(false)
+        
 
         function ddeletefavourite(token,productId){
 
@@ -121,7 +121,7 @@ import jwt from "jwt-decode"
             
             getfavourite(token)
         },[])
-        return <DataContext.Provider value={{setdataaa,setA,cookies,setA,A,dataaa,loadingcheck,getfavourite,ddeletefavourite,setfacount,facount,setfav,favourite,fav,Brands,Subcategorey,category,setdataa,dataa,settotalCartPrice,totalCartPrice,setdata,data,clearallcart,setcart,cart,setCount,Count,load,setload,Deleted,setdeleted,setistrue,istrue,user,setuser,cartid,onlinePayment,addToCart,Count,Getusercart,loading1,setloading1,deleteProduct,updateProduct}}>
+        return <DataContext.Provider value={{setdataaa,cookies,dataaa,loadingcheck,getfavourite,ddeletefavourite,setfacount,facount,setfav,favourite,fav,Brands,Subcategorey,category,setdataa,dataa,settotalCartPrice,totalCartPrice,setdata,data,clearallcart,setcart,cart,setCount,Count,load,setload,Deleted,setdeleted,setistrue,istrue,user,setuser,cartid,onlinePayment,addToCart,Count,Getusercart,loading1,setloading1,deleteProduct,updateProduct}}>
         {children}
         </DataContext.Provider>
         }

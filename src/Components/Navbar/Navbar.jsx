@@ -87,7 +87,7 @@
               
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0 mt-2">
               
-                {userData==null && Cookies.get("Authentication")==undefined? <>
+                {userData==null && localStorage.getItem(`token`)==null? <>
                   <li className="nav-item">
                   <NavLink style={{color:navbarColor1}} className="nav-link text-success fw-bold" to="/Register">Register</NavLink>
                 </li>

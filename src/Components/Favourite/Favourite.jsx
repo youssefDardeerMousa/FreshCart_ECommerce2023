@@ -18,7 +18,7 @@
             
             setdataaa(response?.data?.data)
             console.log(response?.data?.data);
-            setfacount(response?.data?.data.length)
+            setfacount(response?.data?.data?.length)
             
         }
         useEffect(()=>{
@@ -48,7 +48,7 @@
         return (
         <>
         {fav?<div className={`${style.bgimg} py-5`}>
-            {dataaa.length==0?<>
+            {dataaa?.length==0?<>
             <div className="d-flex justify-content-center align-items-center vh-100 w-100">
                 <div className="container">
                 <div className="card bg-success text-light">
@@ -60,7 +60,7 @@
             </>:<div className="container py-5 ">
                 <h3 className='mb-4 text-danger text-center fw-bold'>Your Favourite Products <i className='fas fa-heart text-danger'></i> </h3>
                 <div className="row my-3 ">
-                {dataaa.map((items,index)=>{
+                {dataaa?.map((items,index)=>{
                 return<>
 
                     <div key={index}  className={`col-md-4 col-sm-12 my-2 border ${style.bghover}`} >

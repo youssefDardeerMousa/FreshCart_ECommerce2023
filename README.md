@@ -14,8 +14,7 @@ This project is a front-end e-commerce platform designed to provide users with a
 
 ## Demo
 
-https://youssefdardeermousa.github.io/FreshCart_ECommerce2023/#/Login
-
+https://youssefdardeermousa.github.io/FreshCart_ECommerce2023/#/
 ## Features
 
 
